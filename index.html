@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FUT Team Builder</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <script src="./assets/js/script.js" defer></script>
   </head>
@@ -11,8 +18,25 @@
     class="bg-black bg-[url('https://i.ibb.co/SB4fyQN/soccer-stadium-with-green-grass-1276740-25711.png')] bg-no-repeat max-h-screen bg-cover"
   >
     <div
-      class="bg-black opacity-70 p-5 shadow-[0px_4px_30px_-10px_#0BD953]"
-    ></div>
+      class="bg-black opacity-50 p-2 shadow-[0px_4px_30px_-10px_#0BD953] flex justify-evenly text-white text-lg"
+    >
+      <form>
+        <select
+          id="choiceForm"
+          class="rounded-3xl h-[40px] hover:scale-110 text-gray-950 bg-slate-300 cursor-pointer bg-transparent"
+        >
+          <option value="4-3-3">4-3-3</option>
+          <option value="4-3-3">4-3-3</option>
+          <option value="4-3-3">4-3-3</option>
+          <option value="4-3-3">4-3-3</option>
+          <option value="4-3-3">4-3-3</option>
+        </select>
+      </form>
+      <i
+        id="addPlayer"
+        class="fa-solid fa-plus hover:scale-150 cursor-pointer p-2"
+      ></i>
+    </div>
     <div class="bg-black opacity-30 max-h-screen"></div>
   </body>
 </html>
