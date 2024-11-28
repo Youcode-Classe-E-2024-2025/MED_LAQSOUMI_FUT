@@ -5,13 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FUT Team Builder</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body class="bg-gray-900 text-white">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
       <div class="flex flex-col gap-6">
         <!-- Player Form -->
         <div
-          class="bg-gray-800 rounded-lg shadow-lg p-4 flex flex-wrap gap-4 items-center justify-between"
+          class="bg-gray-800 rounded-lg shadow-lg p-4 flex flex-wrap gap-4 items-center justify-center"
         >
           <form
             id="playerForm"
@@ -19,44 +26,20 @@
           >
             <select
               id="formationSelector"
-              class="p-2 rounded bg-gray-700 text-white"
+              class="p-2 rounded bg-gray-700 text-white w-20"
             >
               <option value="4-3-3">4-3-3</option>
               <option value="4-4-2">4-4-2</option>
             </select>
-            <input
-              type="text"
-              id="playerName"
-              class="p-2 bg-gray-700 rounded text-white"
-              placeholder="Player Name"
-              required
-            />
-            <select
-              id="playerPosition"
-              class="p-2 bg-gray-700 rounded text-white"
-              required
-            >
-              <option value="">Position</option>
-              <option value="GK">GK</option>
-              <option value="DEF">DEF</option>
-              <option value="MID">MID</option>
-              <option value="FWD">FWD</option>
-            </select>
-            <input
-              type="number"
-              id="playerRating"
-              class="p-2 bg-gray-700 rounded text-white"
-              placeholder="1-100"
-              min="1"
-              max="100"
-              required
-            />
-            <button
-              type="submit"
-              class="bg-blue-600 hover:bg-blue-700 text-white font-bold p-2 rounded transition"
-            >
-              Add
-            </button>
+            <i
+              class="fa-solid fa-plus cursor-pointer bg-black p-3 rounded-md hover:scale-125"
+            ></i>
+            <i
+              class="fa-solid fa-pen-to-square cursor-pointer bg-black p-3 rounded-md hover:scale-125"
+            ></i>
+            <i
+              class="fa-solid fa-trash cursor-pointer bg-black p-3 rounded-md hover:scale-125"
+            ></i>
           </form>
         </div>
 
@@ -65,26 +48,68 @@
           class="relative grid bg-center bg-no-repeat bg-contain rounded-lg shadow-lg sm:p-6"
           style="background-image: url('/assets/img/1137.jpg'); height: 650px"
         >
-          <div class="absolute inset-0 grid grid-rows-12 grid-cols-11 gap-2">
+          <div
+            class="grid grid-rows-12 grid-cols-12 lg:grid-rows-12 lg:grid-cols-12"
+          >
             <!-- GK -->
             <div
-              class="player-card row-start-11 col-start-6 flex justify-center items-center"
+              class="player-card row-start-10 col-start-6 lg:row-start-11 lg:col-span-12 p-2 flex justify-center items-center"
             >
               Player 1
             </div>
             <!-- DEF -->
-            <div class="player-card row-start-9 col-start-5">Player 5</div>
-            <div class="player-card row-start-9 col-start-7">Player 4</div>
-            <div class="player-card row-start-8 col-start-4">Player 2</div>
-            <div class="player-card row-start-8 col-start-8">Player 3</div>
+            <div
+              class="player-card row-start-8 col-start-5 lg:row-start-10 lg:col-start-6 p-2 flex justify-center items-center"
+            >
+              Player 5
+            </div>
+            <div
+              class="player-card row-start-8 col-start-7 lg:row-start-10 lg:col-start-7 p-2 flex justify-center items-center"
+            >
+              Player 4
+            </div>
+            <div
+              class="player-card row-start-7 col-start-3 lg:row-start-9 lg:col-start-5 p-2 flex justify-center items-center"
+            >
+              Player 2
+            </div>
+            <div
+              class="player-card row-start-7 col-start-9 lg:row-start-9 lg:col-start-8 p-2 flex justify-center items-center"
+            >
+              Player 3
+            </div>
             <!-- MID -->
-            <div class="player-card row-start-6 col-start-4">Player 6</div>
-            <div class="player-card row-start-6 col-start-8">Player 8</div>
-            <div class="player-card row-start-5 col-start-6">Player 10</div>
+            <div
+              class="player-card row-start-6 col-start-5 lg:row-start-6 lg:col-start-5 p-2 flex justify-center items-center"
+            >
+              Player 6
+            </div>
+            <div
+              class="player-card row-start-6 col-start-8 lg:row-start-6 lg:col-start-8 p-2 flex justify-center items-center"
+            >
+              Player 8
+            </div>
+            <div
+              class="player-card row-start-5 col-start-7 lg:row-start-5 lg:col-span-12 p-2 flex justify-center items-center"
+            >
+              Player 10
+            </div>
             <!-- ATT -->
-            <div class="player-card row-start-3 col-start-4">Player 7</div>
-            <div class="player-card row-start-3 col-start-8">Player 11</div>
-            <div class="player-card row-start-2 col-start-6">Player 9</div>
+            <div
+              class="player-card row-start-3 col-start-3 lg:row-start-3 lg:col-start-5 p-2 flex justify-center items-center"
+            >
+              Player 7
+            </div>
+            <div
+              class="player-card row-start-3 col-start-9 lg:row-start-3 lg:col-start-8 p-2 flex justify-center items-center"
+            >
+              Player 11
+            </div>
+            <div
+              class="player-card row-start-2 col-start-6 lg:row-start-1 lg:col-span-12 p-2 flex justify-center items-center"
+            >
+              Player 9
+            </div>
           </div>
         </div>
 
