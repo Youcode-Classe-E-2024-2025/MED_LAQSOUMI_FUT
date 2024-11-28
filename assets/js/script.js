@@ -1,113 +1,115 @@
-// DOM Elements
-const playerForm = document.getElementById("playerForm");
-const teamGrid = document.getElementById("teamGrid");
-const formationSelector = document.getElementById("formationSelector");
-const chemistryScore = document.getElementById("chemistryScore");
+import data from "./data";
 
-// Data
-let players = [];
-let formation = "4-3-3";
-const positions433 = [
-  "GK",
-  "CB",
-  "CB",
-  "LB",
-  "RB",
-  "CM",
-  "CM",
-  "CM",
-  "LW",
-  "RW",
-  "ST",
-];
-const positions442 = [
-  "GK",
-  "CB",
-  "CB",
-  "LB",
-  "RB",
-  "CM",
-  "CM",
-  "LM",
-  "RM",
-  "ST",
-  "ST",
-];
-const chemistryBase = 10;
+// // DOM Elements
+// const playerForm = document.getElementById("playerForm");
+// const teamGrid = document.getElementById("teamGrid");
+// const formationSelector = document.getElementById("formationSelector");
+// const chemistryScore = document.getElementById("chemistryScore");
 
-// Add Player
-playerForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const name = document.getElementById("playerName").value;
-  const position = document.getElementById("playerPosition").value;
-  const rating = parseInt(document.getElementById("playerRating").value);
+// // Data
+// let players = [];
+// let formation = "4-3-3";
+// const positions433 = [
+//   "GK",
+//   "CB",
+//   "CB",
+//   "LB",
+//   "RB",
+//   "CM",
+//   "CM",
+//   "CM",
+//   "LW",
+//   "RW",
+//   "ST",
+// ];
+// const positions442 = [
+//   "GK",
+//   "CB",
+//   "CB",
+//   "LB",
+//   "RB",
+//   "CM",
+//   "CM",
+//   "LM",
+//   "RM",
+//   "ST",
+//   "ST",
+// ];
+// const chemistryBase = 10;
 
-  if (players.length >= 11) {
-    alert("Team is full!");
-    return;
-  }
+// // Add Player
+// playerForm.addEventListener("submit", (e) => {
+//   e.preventDefault();
+//   const name = document.getElementById("playerName").value;
+//   const position = document.getElementById("playerPosition").value;
+//   const rating = parseInt(document.getElementById("playerRating").value);
 
-  players.push({ name, position, rating });
-  updateTeamGrid();
-  playerForm.reset();
-});
+//   if (players.length >= 11) {
+//     alert("Team is full!");
+//     return;
+//   }
 
-// Change Formation
-formationSelector.addEventListener("change", (e) => {
-  formation = e.target.value;
-  updateTeamGrid();
-});
+//   players.push({ name, position, rating });
+//   updateTeamGrid();
+//   playerForm.reset();
+// });
 
-// Update Team Grid
-function updateTeamGrid() {
-  teamGrid.innerHTML = "";
-  const currentPositions = formation === "4-3-3" ? positions433 : positions442;
+// // Change Formation
+// formationSelector.addEventListener("change", (e) => {
+//   formation = e.target.value;
+//   updateTeamGrid();
+// });
 
-  players.forEach((player, index) => {
-    const card = document.createElement("div");
-    card.className = "bg-gray-700 p-4 rounded shadow-md text-center draggable";
-    card.draggable = true;
+// // Update Team Grid
+// function updateTeamGrid() {
+//   teamGrid.innerHTML = "";
+//   const currentPositions = formation === "4-3-3" ? positions433 : positions442;
 
-    card.innerHTML = `
-      <h3 class="font-bold text-lg">${player.name}</h3>
-      <p>${player.position}</p>
-      <p>Rating: ${player.rating}</p>
-      <button class="btn mt-2 bg-red-600 hover:bg-red-800" onclick="removePlayer(${index})">Remove</button>
-    `;
+//   players.forEach((player, index) => {
+//     const card = document.createElement("div");
+//     card.className = "bg-gray-700 p-4 rounded shadow-md text-center draggable";
+//     card.draggable = true;
 
-    teamGrid.appendChild(card);
-  });
+//     card.innerHTML = `
+//       <h3 class="font-bold text-lg">${player.name}</h3>
+//       <p>${player.position}</p>
+//       <p>Rating: ${player.rating}</p>
+//       <button class="btn mt-2 bg-red-600 hover:bg-red-800" onclick="removePlayer(${index})">Remove</button>
+//     `;
 
-  calculateChemistry(currentPositions);
-}
+//     teamGrid.appendChild(card);
+//   });
 
-// Remove Player
-function removePlayer(index) {
-  players.splice(index, 1);
-  updateTeamGrid();
-}
+//   calculateChemistry(currentPositions);
+// }
 
-// Calculate Chemistry
-function calculateChemistry(currentPositions) {
-  let totalChemistry = 0;
+// // Remove Player
+// function removePlayer(index) {
+//   players.splice(index, 1);
+//   updateTeamGrid();
+// }
 
-  players.forEach((player) => {
-    const positionScore = currentPositions.includes(player.position)
-      ? chemistryBase
-      : 0;
-    totalChemistry += positionScore; // Add further rules for chemistry here
-  });
+// // Calculate Chemistry
+// function calculateChemistry(currentPositions) {
+//   let totalChemistry = 0;
 
-  chemistryScore.textContent = `Chemistry: ${totalChemistry}/100`;
-}
+//   players.forEach((player) => {
+//     const positionScore = currentPositions.includes(player.position)
+//       ? chemistryBase
+//       : 0;
+//     totalChemistry += positionScore; // Add further rules for chemistry here
+//   });
 
-// Load/Save from LocalStorage
-window.addEventListener("load", () => {
-  const savedPlayers = JSON.parse(localStorage.getItem("players")) || [];
-  players = savedPlayers;
-  updateTeamGrid();
-});
+//   chemistryScore.textContent = `Chemistry: ${totalChemistry}/100`;
+// }
 
-window.addEventListener("beforeunload", () => {
-  localStorage.setItem("players", JSON.stringify(players));
-});
+// // Load/Save from LocalStorage
+// window.addEventListener("load", () => {
+//   const savedPlayers = JSON.parse(localStorage.getItem("players")) || [];
+//   players = savedPlayers;
+//   updateTeamGrid();
+// });
+
+// window.addEventListener("beforeunload", () => {
+//   localStorage.setItem("players", JSON.stringify(players));
+// });
