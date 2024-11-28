@@ -1,4 +1,6 @@
-import data from "./data";
+
+
+// import data from "./data";
 
 // // DOM Elements
 // const playerForm = document.getElementById("playerForm");
