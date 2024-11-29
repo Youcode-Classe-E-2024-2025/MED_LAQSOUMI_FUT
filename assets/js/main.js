@@ -101,3 +101,24 @@ document.querySelector("#teamForm").addEventListener("submit", (e) => {
     document.querySelector("#displayData").append(nameTeamBloc);
   }
 });
+
+document.querySelector("#plusBtn").addEventListener("click", () => {
+  document.querySelector("#playerModalContainer").classList.remove("hidden");
+});
+
+document.querySelector("#closePlayerModal").addEventListener("click", () => {
+  document.querySelector("#playerModalContainer").classList.add("hidden");
+});
+
+const modalContainer = document.getElementById("playerModalContainer");
+const closeModalButton = document.getElementById("closePlayerModal");
+
+function showModal() {
+  modalContainer.classList.remove("hidden");
+  modalContainer.classList.add("flex");
+}
+
+closeModalButton.addEventListener("click", () => {
+  modalContainer.classList.remove("flex");
+  modalContainer.classList.add("hidden");
+});
