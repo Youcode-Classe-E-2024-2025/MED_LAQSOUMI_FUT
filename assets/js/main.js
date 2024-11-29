@@ -60,11 +60,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // Function to update the stadium card with the selected player's data
   function updateStadiumCard(stadiumCard, player) {
     stadiumCard.innerHTML = `
-      <div class="bg-[url('./assets/img/emptyCard.png')] bg-contain bg-no-repeat bg-center w-14 h-12 lg:w-14 lg:h-20 m-auto gap-2 cursor-pointer">
-        <img class="w-4 right-11 p-0" src="${player.logo}" alt="${player.club}" />
-        <img class="relative m-auto w-2 bottom-2 border border-white shadow-lg " src="${player.flag}" alt="${player.nationality}" />
-        <p class="relative text-white font-semibold bottom-4 right-1 w-[5px] p-2">${player.rating}</p>
-        <img class="relative w-10 bottom-8 left-2 object-cover [mask-image:linear-gradient(to_top,rgba(0,0,0,0)_2%,rgba(0,0,0,1)_8%)]" src="${player.photo}" alt="${player.name}" />
+      <div class="bg-[url('./assets/img/emptyCard.png')] bg-contain bg-no-repeat bg-center w-14 h-12 lg:w-20 lg:h-20 m-auto gap-2 cursor-pointer">
+        <img class="w-4 right-14 m-auto" src="${player.logo}" alt="${player.club}" />
+        <img class="relative m-auto w-3 top-1 border border-white shadow-lg " src="${player.flag}" alt="${player.nationality}" />
+        <p class="relative text-white font-semibold bottom-4 left-3 text-[12px] shadow-lg p-2">${player.rating}</p>
+        <img class="relative w-10 bottom-8 left-5 object-cover [mask-image:linear-gradient(to_top,rgba(0,0,0,0)_2%,rgba(0,0,0,1)_8%)]" src="${player.photo}" alt="${player.name}" />
       </div>
     `;
   }
@@ -84,4 +84,20 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelector("#closeModal").addEventListener("click", () => {
     closeModal();
   });
+});
+
+document.querySelector("#teamForm").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const teamName = document.querySelector("#teamName").value.trim();
+  const teamFormation = document.querySelector("#teamFormation").value.trim();
+  if (teamName != "" && teamFormation != "") {
+    const nameTeamBloc = document.createElement("div");
+    nameTeamBloc.className =
+      "flex justify-between items-center flex-col m-auto p-2";
+    nameTeamBloc.innerHTML = `
+    <p class="text-white text-center text-[24px]">${teamName}</p>
+    <p class="text-white text-center text-[24px]">${teamFormation}</p>
+    `;
+    document.querySelector("#displayData").append(nameTeamBloc);
+  }
 });

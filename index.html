@@ -13,8 +13,12 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body class="bg-gray-900 text-white">
+  <body class="bg-gray-900 text-white font-poppins">
     <header>
       <div
         class="w-auto shadow-lg p-4 flex flex-col md:flex-row md:justify-around md:items-center gap-4 text-white"
@@ -28,15 +32,15 @@
         <!-- Navigation -->
         <nav>
           <ul class="flex gap-6">
-            <li>
+            <li class="hover:scale-125">
               <a
                 href="index.html"
-                class="hover:text-yellow-400 hover:scale-125 transition-colors"
+                class="hover:text-yellow-400 transition-colors"
               >
                 Home
               </a>
             </li>
-            <li>
+            <li class="hover:scale-125">
               <a
                 href="players.html"
                 class="hover:text-yellow-400 transition-colors hover:scale-125"
@@ -80,7 +84,7 @@
 
             <!-- Add Button -->
             <button
-              type="button"
+              type="submit"
               id="submitForm"
               class="fa-solid fa-check p-3 rounded-md bg-yellow-600 hover:bg-yellow-400 transition-all text-white hover:scale-125"
             ></button>
@@ -97,6 +101,7 @@
             ></button>
           </form>
         </div>
+        <div id="displayData"></div>
         <!-- MODAAAAAAAAAl -->
         <div
           id="modal"
@@ -257,7 +262,7 @@
         <!-- Navigation Links -->
         <nav class="mt-4 md:mt-0">
           <ul class="flex gap-6">
-            <li>
+            <li class="hover:scale-125">
               <a
                 href="index.html"
                 class="hover:text-yellow-400 transition-colors"
@@ -265,7 +270,7 @@
                 Home
               </a>
             </li>
-            <li>
+            <li class="hover:scale-125">
               <a
                 href="players.html"
                 class="hover:text-yellow-400 transition-colors"
@@ -273,7 +278,7 @@
                 Players
               </a>
             </li>
-            <li>
+            <li class="hover:scale-125">
               <a href="#" class="hover:text-yellow-400 transition-colors">
                 Contact
               </a>
@@ -288,21 +293,21 @@
             class="hover:text-yellow-400 transition-colors"
             aria-label="Twitter"
           >
-            <i class="fab fa-twitter"></i>
+            <i class="fab fa-twitter hover:scale-125"></i>
           </a>
           <a
             href="#"
             class="hover:text-yellow-400 transition-colors"
             aria-label="Facebook"
           >
-            <i class="fab fa-facebook"></i>
+            <i class="fab fa-facebook hover:scale-125"></i>
           </a>
           <a
             href="#"
             class="hover:text-yellow-400 transition-colors"
             aria-label="Instagram"
           >
-            <i class="fab fa-instagram"></i>
+            <i class="fab fa-instagram hover:scale-125"></i>
           </a>
         </div>
       </div>

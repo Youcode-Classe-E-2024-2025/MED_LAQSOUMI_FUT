@@ -10,6 +10,9 @@ module.exports = {
         680: "680px",
         425: "425px",
       },
+      fontFamily: {
+        poppins: ["Roboto", "sans-serif"], // Add Poppins as a custom font
+      },
     },
   },
   plugins: [],
