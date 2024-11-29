@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <div class="bg-[url('./assets/img/emptyCard.png')] bg-contain bg-no-repeat bg-center w-24 h-32 m-auto gap-2">
               <img class="w-10 p-2 " src="${player.logo}" alt="${player.club}" />
               <img class="relative m-auto w-4 h-3 bottom-2" src="${player.flag}" alt="${player.nationality}" />
-              <p class="relative text-green-400 font-bold bottom-4 left-4">${player.rating}</p>
+              <p class="relative text-yellow-500 font-bold bottom-4 left-4">${player.rating}</p>
                 <img class="relative w-16 scale-100 bottom-7 left-4" src="${player.photo}" alt="${player.name}" />
                 <p class="text-sm">${player.name}<p>
               </div>
