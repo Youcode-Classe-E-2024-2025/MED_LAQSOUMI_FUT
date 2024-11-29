@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Function to update the stadium card with the selected player's data
   function updateStadiumCard(stadiumCard, player) {
     stadiumCard.innerHTML = `
-      <div class="bg-[url('./assets/img/emptyCard.png')] bg-contain bg-no-repeat bg-center w-14 h-12 lg:w-20 lg:h-20 m-auto gap-2 cursor-pointer">
+      <div class="bg-[url('./assets/img/emptyCard.png')] bg-contain bg-no-repeat bg-center w-16 h-12 lg:w-24 lg:h-24 cursor-pointer">
         <img class="w-4 right-14 m-auto" src="${player.logo}" alt="${player.club}" />
         <img class="relative m-auto w-3 top-1 border border-white shadow-lg " src="${player.flag}" alt="${player.nationality}" />
         <p class="relative text-white font-semibold bottom-4 left-3 text-[12px] shadow-lg p-2">${player.rating}</p>
@@ -99,6 +99,7 @@ document.querySelector("#teamForm").addEventListener("submit", (e) => {
     <p class="text-white text-center text-[24px]">${teamFormation}</p>
     `;
     document.querySelector("#displayData").append(nameTeamBloc);
+    document.querySelector("#playerCardElem").classList.remove("hidden");
   }
 });
 
