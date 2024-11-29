@@ -17,7 +17,7 @@
   <body class="bg-gray-900 text-white">
     <header>
       <div
-        class="bg-gray-800 w-screen shadow-lg p-10 m-auto flex flex-col md:flex-row md:justify-between md:items-center gap-6 text-white"
+        class="w-auto shadow-lg p-4 flex flex-col md:flex-row md:justify-around md:items-center gap-4 text-white"
       >
         <!-- Logo and Banner -->
         <div class="flex items-center gap-4">
@@ -49,10 +49,10 @@
       </div>
     </header>
 
-    <div class="container m-auto p-10">
-      <div class="flex flex-col gap-6">
+    <div class="container">
+      <div class="flex flex-col gap-8">
         <!-- Player Form -->
-        <div class="p-6 flex flex-col gap-6 items-center">
+        <div class="p-4 flex flex-col gap-6 items-center">
           <form
             id="teamForm"
             class="flex flex-wrap gap-4 items-center justify-center p-4 bg-gray-800 rounded-lg"
@@ -76,22 +76,24 @@
               <option value="4-4-2">4-4-2</option>
               <option value="4-3-3">4-3-3</option>
               <option value="3-5-2">3-5-2</option>
-              <option value="5-3-2">5-3-2</option>
-              <option value="4-2-3-1">4-2-3-1</option>
             </select>
 
             <!-- Add Button -->
             <button
               type="button"
-              id="plusBtn"
-              class="fa-solid fa-plus p-3 rounded-md bg-green-600 hover:bg-green-500 transition-all text-white"
+              id="submitForm"
+              class="fa-solid fa-check p-3 rounded-md bg-yellow-600 hover:bg-yellow-400 transition-all text-white hover:scale-125"
             ></button>
-
+            <button
+              type="button"
+              id="plusBtn"
+              class="fa-solid fa-plus p-3 rounded-md bg-green-600 hover:bg-green-400 transition-all text-white hover:scale-125"
+            ></button>
             <!-- Remove Button -->
             <button
               type="button"
               id="removeTeam"
-              class="fa-solid fa-trash p-3 rounded-md bg-red-600 hover:bg-red-500 transition-all text-white"
+              class="fa-solid fa-trash p-3 rounded-md bg-red-600 hover:bg-red-400 transition-all text-white hover:scale-125"
             ></button>
           </form>
         </div>
@@ -132,126 +134,123 @@
           </div>
         </div>
         <!-- (-^-) -->
-
-        <!-- Team Section -->
+      </div>
+      <!-- Team Section -->
+      <div
+        class="bg-[url('/assets/img/1137.jpg')] bg-contain bg-no-repeat bg-center h-screen w-auto lg:h-[130vh] lg:w-screen"
+      >
         <div
-          class="bg-[url('/assets/img/1137.jpg')] bg-contain bg-no-repeat bg-center h-screen w-full lg:h-[130vh] lg:w-[200vh]"
+          class="grid grid-cols-12 grid-rows-8 lg:grid-cols-11 lg:grid-rows-12"
         >
+          <!-- ATT -->
           <div
-            class="grid grid-cols-12 grid-rows-8 lg:grid-cols-11 lg:grid-rows-12"
+            class="player-card m-auto col-start-6 col-span-2 row-start-1 lg:col-start-6 lg:col-span-1 lg:row-start-1"
           >
-            <!-- ATT -->
-            <div
-              class="player-card m-auto col-start-6 col-span-2 row-start-1 lg:col-start-6 lg:col-span-1 lg:row-start-1"
-            >
-              <img
-                src="./assets/img/emptyCard.png"
-                class="w-12 lg:w-16 hover:scale-150 cursor-pointer"
-                alt="Attacker"
-              />
-            </div>
-            <div
-              class="player-card m-auto col-start-3 col-span-2 row-start-2 md:col-start-4 md:col-span-2 md:row-start-2 lg:col-start-4 lg:col-span-2 lg:row-start-2"
-            >
-              <img
-                src="./assets/img/emptyCard.png"
-                class="w-12 lg:w-16 hover:scale-150 cursor-pointer"
-                alt="Attacker"
-              />
-            </div>
-            <div
-              class="player-card m-auto col-start-9 col-span-2 row-start-2 md:col-start-8 md:col-span-2 md:row-start-2 lg:col-start-7 lg:col-span-2 lg:row-start-2"
-            >
-              <img
-                src="./assets/img/emptyCard.png"
-                class="w-12 lg:w-16 hover:scale-150 cursor-pointer"
-                alt="Attacker"
-              />
-            </div>
+            <img
+              src="./assets/img/emptyCard.png"
+              class="w-12 lg:w-16 hover:scale-150 cursor-pointer"
+              alt="Attacker"
+            />
+          </div>
+          <div
+            class="player-card m-auto col-start-3 col-span-2 row-start-2 md:col-start-4 md:col-span-2 md:row-start-2 lg:col-start-4 lg:col-span-2 lg:row-start-2"
+          >
+            <img
+              src="./assets/img/emptyCard.png"
+              class="w-12 lg:w-16 hover:scale-150 cursor-pointer"
+              alt="Attacker"
+            />
+          </div>
+          <div
+            class="player-card m-auto col-start-9 col-span-2 row-start-2 md:col-start-8 md:col-span-2 md:row-start-2 lg:col-start-7 lg:col-span-2 lg:row-start-2"
+          >
+            <img
+              src="./assets/img/emptyCard.png"
+              class="w-12 lg:w-16 hover:scale-150 cursor-pointer"
+              alt="Attacker"
+            />
+          </div>
 
-            <!-- MID -->
-            <div
-              class="player-card m-auto col-start-6 col-span-2 row-start-4 md:col-start-6 md:col-span-2 md:row-start-3 lg:col-start-6 lg:col-span-1 lg:row-start-3"
-            >
-              <img
-                src="./assets/img/emptyCard.png"
-                class="w-12 lg:w-16 hover:scale-150 cursor-pointer"
-                alt="Midfielder"
-              />
-            </div>
-            <div
-              class="player-card m-auto col-start-9 col-span-2 row-start-4 md:col-start-8 md:col-span-2 md:row-start-4 lg:col-start-7 lg:col-span-2 lg:row-start-4"
-            >
-              <img
-                src="./assets/img/emptyCard.png"
-                class="w-12 lg:w-16 hover:scale-150 cursor-pointer"
-                alt="Midfielder"
-              />
-            </div>
-            <div
-              class="player-card m-auto col-start-3 col-span-2 row-start-4 md:col-start-4 md:col-span-2 md:row-start-4 lg:col-start-4 lg:col-span-2 lg:row-start-4"
-            >
-              <img
-                src="./assets/img/emptyCard.png"
-                class="w-12 lg:w-16 hover:scale-150 cursor-pointer"
-                alt="Midfielder"
-              />
-            </div>
-            <!-- DEF -->
-            <div
-              class="player-card m-auto col-start-2 col-span-2 row-start-5 md:col-start-4 md:col-span-2 md:row-start-5 lg:col-start-4 lg:col-span-2 lg:row-start-6"
-            >
-              <img
-                src="./assets/img/emptyCard.png"
-                class="w-12 lg:w-16 hover:scale-150 cursor-pointer"
-                alt="Defender"
-              />
-            </div>
-            <div
-              class="player-card m-auto col-start-10 col-span-2 row-start-5 md:col-start-8 md:col-span-2 md:row-start-5 lg:col-start-7 lg:col-span-2 lg:row-start-6"
-            >
-              <img
-                src="./assets/img/emptyCard.png"
-                class="w-12 lg:w-16 hover:scale-150 cursor-pointer"
-                alt="Defender"
-              />
-            </div>
-            <div
-              class="player-card m-auto col-start-8 col-span-2 row-start-6 md:col-start-7 md:col-span-2 md:row-start-6 lg:col-start-6 lg:col-span-2 lg:row-start-7"
-            >
-              <img
-                src="./assets/img/emptyCard.png"
-                class="w-12 lg:w-16 hover:scale-150 cursor-pointer"
-                alt="Defender"
-              />
-            </div>
-            <div
-              class="player-card m-auto col-start-4 col-span-2 row-start-6 md:col-start-5 md:col-span-2 md:row-start-6 lg:col-start-5 lg:col-span-2 lg:row-start-7"
-            >
-              <img
-                src="./assets/img/emptyCard.png"
-                class="w-12 lg:w-16 hover:scale-150 cursor-pointer"
-                alt="Defender"
-              />
-            </div>
-            <!-- GK -->
-            <div
-              class="player-card m-auto col-start-6 col-span-2 row-start-7 lg:col-start-6 lg:col-span-1 lg:row-start-8"
-            >
-              <img
-                src="./assets/img/emptyCard.png"
-                class="w-12 lg:w-16 hover:scale-150 cursor-pointer"
-                alt="Goalkeeper"
-              />
-            </div>
+          <!-- MID -->
+          <div
+            class="player-card m-auto col-start-6 col-span-2 row-start-4 md:col-start-6 md:col-span-2 md:row-start-3 lg:col-start-6 lg:col-span-1 lg:row-start-3"
+          >
+            <img
+              src="./assets/img/emptyCard.png"
+              class="w-12 lg:w-16 hover:scale-150 cursor-pointer"
+              alt="Midfielder"
+            />
+          </div>
+          <div
+            class="player-card m-auto col-start-9 col-span-2 row-start-4 md:col-start-8 md:col-span-2 md:row-start-4 lg:col-start-7 lg:col-span-2 lg:row-start-4"
+          >
+            <img
+              src="./assets/img/emptyCard.png"
+              class="w-12 lg:w-16 hover:scale-150 cursor-pointer"
+              alt="Midfielder"
+            />
+          </div>
+          <div
+            class="player-card m-auto col-start-3 col-span-2 row-start-4 md:col-start-4 md:col-span-2 md:row-start-4 lg:col-start-4 lg:col-span-2 lg:row-start-4"
+          >
+            <img
+              src="./assets/img/emptyCard.png"
+              class="w-12 lg:w-16 hover:scale-150 cursor-pointer"
+              alt="Midfielder"
+            />
+          </div>
+          <!-- DEF -->
+          <div
+            class="player-card m-auto col-start-2 col-span-2 row-start-5 md:col-start-4 md:col-span-2 md:row-start-5 lg:col-start-4 lg:col-span-2 lg:row-start-6"
+          >
+            <img
+              src="./assets/img/emptyCard.png"
+              class="w-12 lg:w-16 hover:scale-150 cursor-pointer"
+              alt="Defender"
+            />
+          </div>
+          <div
+            class="player-card m-auto col-start-10 col-span-2 row-start-5 md:col-start-8 md:col-span-2 md:row-start-5 lg:col-start-7 lg:col-span-2 lg:row-start-6"
+          >
+            <img
+              src="./assets/img/emptyCard.png"
+              class="w-12 lg:w-16 hover:scale-150 cursor-pointer"
+              alt="Defender"
+            />
+          </div>
+          <div
+            class="player-card m-auto col-start-8 col-span-2 row-start-6 md:col-start-7 md:col-span-2 md:row-start-6 lg:col-start-6 lg:col-span-2 lg:row-start-7"
+          >
+            <img
+              src="./assets/img/emptyCard.png"
+              class="w-12 lg:w-16 hover:scale-150 cursor-pointer"
+              alt="Defender"
+            />
+          </div>
+          <div
+            class="player-card m-auto col-start-4 col-span-2 row-start-6 md:col-start-5 md:col-span-2 md:row-start-6 lg:col-start-5 lg:col-span-2 lg:row-start-7"
+          >
+            <img
+              src="./assets/img/emptyCard.png"
+              class="w-12 lg:w-16 hover:scale-150 cursor-pointer"
+              alt="Defender"
+            />
+          </div>
+          <!-- GK -->
+          <div
+            class="player-card m-auto col-start-6 col-span-2 row-start-7 lg:col-start-6 lg:col-span-1 lg:row-start-8"
+          >
+            <img
+              src="./assets/img/emptyCard.png"
+              class="w-12 lg:w-16 hover:scale-150 cursor-pointer"
+              alt="Goalkeeper"
+            />
           </div>
         </div>
       </div>
     </div>
-    <footer class="relative bg-gray-800 text-white w-screen p-8 m-auto top-3">
-      <div
-        class="container mx-auto flex flex-col md:flex-row justify-around items-center"
-      >
+    <footer class="text-white w-auto p-2 mt-[15%] h-auto">
+      <div class="flex flex-col md:flex-row justify-around items-center">
         <!-- Footer Logo -->
         <div class="text-lg font-bold tracking-wide">MEDLAQ777</div>
 
