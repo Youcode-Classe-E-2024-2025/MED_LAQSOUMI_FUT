@@ -1,50 +1,89 @@
-// Fetch and display player data
-fetch("/Data/players.json")
+fetch("../Data/players.json")
   .then((response) => response.json())
-  .then((data) => {
+  .then((players) => {
     const playersSection = document.getElementById("players");
-    const players = data.players;
 
+    // Create a table
+    const table = document.createElement("table");
+    table.className =
+      "table-auto min-w-full border-collapse border border-gray-300 text-sm";
+
+    // Table header
+    table.innerHTML = `
+      <thead>
+        <tr class="bg-gray-200 text-gray-700">
+          <th class="border border-gray-300 px-2 md:px-4 py-2">Photo</th>
+          <th class="border border-gray-300 px-2 md:px-4 py-2">Name</th>
+          <th class="border border-gray-300 px-2 md:px-4 py-2">Position</th>
+          <th class="border border-gray-300 px-2 md:px-4 py-2">Nationality</th>
+          <th class="border border-gray-300 px-2 md:px-4 py-2">Club</th>
+          <th class="border border-gray-300 px-2 md:px-4 py-2">Rating</th>
+          <th class="border border-gray-300 px-2 md:px-4 py-2">Pace</th>
+          <th class="border border-gray-300 px-2 md:px-4 py-2">Shooting</th>
+          <th class="border border-gray-300 px-2 md:px-4 py-2">Passing</th>
+          <th class="border border-gray-300 px-2 md:px-4 py-2">Dribbling</th>
+          <th class="border border-gray-300 px-2 md:px-4 py-2">Defending</th>
+          <th class="border border-gray-300 px-2 md:px-4 py-2">Physical</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    `;
+
+    // Append rows for each player
+    const tbody = table.querySelector("tbody");
     players.forEach((player) => {
-      // Create player card
-      const playerCard = document.createElement("div");
-      playerCard.className = "bg-white rounded-lg shadow-lg overflow-hidden";
-
-      // Card content
-      playerCard.innerHTML = `
-        <div class="p-4">
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td class="border border-gray-300 px-2 py-2 text-center">
           <img src="${player.photo}" alt="${
         player.name
-      }" class="w-24 h-24 rounded-full mx-auto">
-          <h3 class="text-lg font-bold text-center mt-4">${player.name}</h3>
-          <p class="text-center text-sm text-gray-500">${player.position}</p>
-          <p class="text-center text-sm text-gray-500">${
-            player.nationality
-          } <img src="${player.flag}" alt="${
+      }" class="w-10 h-10 rounded-full mx-auto">
+        </td>
+        <td class="border border-gray-300 px-2 py-2 text-center">${
+          player.name
+        }</td>
+        <td class="border border-gray-300 px-2 py-2 text-center">${
+          player.position
+        }</td>
+        <td class="border border-gray-300 px-2 py-2">
+          <img class="w-5 mx-auto" src="${player.flag}" alt="${
         player.nationality
-      }" class="inline-block w-5 h-5"></p>
-          <div class="mt-4 text-center">
-            <img src="${player.logo}" alt="${
-        player.club
-      }" class="w-16 h-16 mx-auto">
-            <p class="text-sm text-gray-600">${player.club}</p>
-          </div>
-          <div class="mt-4 text-center">
-            <p class="text-gray-700">Rating: <span class="font-semibold">${
-              player.rating
-            }</span></p>
-            <p class="text-gray-700">Pace: ${player.pace}</p>
-            <p class="text-gray-700">Shooting: ${player.shooting}</p>
-            <p class="text-gray-700">Passing: ${player.passing}</p>
-            <p class="text-gray-700">Dribbling: ${player.dribbling}</p>
-            <p class="text-gray-700">Defending: ${player.defending || "-"}</p>
-            <p class="text-gray-700">Physical: ${player.physical || "-"}</p>
-          </div>
-        </div>
+      }">
+        </td>
+        <td class="border border-gray-300 px-2 py-2 text-center">
+          <img class="w-8 mx-auto" src="${player.logo}" alt="${player.club}">
+        </td>
+        <td class="border border-gray-300 px-2 py-2 text-center">${
+          player.rating
+        }</td>
+        <td class="border border-gray-300 px-2 py-2 text-center">${
+          player.pace
+        }</td>
+        <td class="border border-gray-300 px-2 py-2 text-center">${
+          player.shooting
+        }</td>
+        <td class="border border-gray-300 px-2 py-2 text-center">${
+          player.passing
+        }</td>
+        <td class="border border-gray-300 px-2 py-2 text-center">${
+          player.dribbling
+        }</td>
+        <td class="border border-gray-300 px-2 py-2 text-center">${
+          player.defending || "-"
+        }</td>
+        <td class="border border-gray-300 px-2 py-2 text-center">${
+          player.physical || "-"
+        }</td>
       `;
-
-      // Append to section
-      playersSection.appendChild(playerCard);
+      tbody.appendChild(row);
     });
+
+    // Add table to the section
+    playersSection.appendChild(table);
+
+    // Add total players count
+    const totalPlace = document.querySelector("#totalPlayers");
+    totalPlace.textContent = `Total Players: ${players.length}`;
   })
   .catch((error) => console.error("Error loading players:", error));

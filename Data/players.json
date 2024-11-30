@@ -414,5 +414,205 @@
     "reflexes": 90,
     "speed": 50,
     "positioning": 85
+  },
+  {
+    "name": "Thibaut Courtois",
+    "photo": "https://cdn.sofifa.net/players/192/119/25_120.png",
+    "position": "GK",
+    "nationality": "Belgium",
+    "flag": "https://cdn.sofifa.net/flags/be.png",
+    "club": "Real Madrid",
+    "logo": "https://cdn.sofifa.net/meta/team/243/120.png",
+    "rating": 89
+  },
+  {
+    "name": "Alisson Becker",
+    "photo": "https://cdn.sofifa.net/players/208/830/25_120.png",
+    "position": "GK",
+    "nationality": "Brazil",
+    "flag": "https://cdn.sofifa.net/flags/br.png",
+    "club": "Liverpool",
+    "logo": "https://cdn.sofifa.net/meta/team/10/120.png",
+    "rating": 89
+  },
+  {
+    "name": "Marc-André ter Stegen",
+    "photo": "https://cdn.sofifa.net/players/192/448/25_120.png",
+    "position": "GK",
+    "nationality": "Germany",
+    "flag": "https://cdn.sofifa.net/flags/de.png",
+    "club": "Barcelona",
+    "logo": "https://cdn.sofifa.net/meta/team/241/120.png",
+    "rating": 89
+  },
+  {
+    "name": "Ederson",
+    "photo": "https://cdn.sofifa.net/players/212/831/25_120.png",
+    "position": "GK",
+    "nationality": "Brazil",
+    "flag": "https://cdn.sofifa.net/flags/br.png",
+    "club": "Manchester City",
+    "logo": "https://cdn.sofifa.net/meta/team/10/120.png",
+    "rating": 88
+  },
+  {
+    "name": "Virgil van Dijk",
+    "photo": "https://cdn.sofifa.net/players/203/376/25_120.png",
+    "position": "CB",
+    "nationality": "Netherlands",
+    "flag": "https://cdn.sofifa.net/flags/nl.png",
+    "club": "Liverpool",
+    "logo": "https://cdn.sofifa.net/meta/team/10/120.png",
+    "rating": 89
+  },
+  {
+    "name": "Rúben Dias",
+    "photo": "https://cdn.sofifa.net/players/234/378/25_120.png",
+    "position": "CB",
+    "nationality": "Portugal",
+    "flag": "https://cdn.sofifa.net/flags/pt.png",
+    "club": "Manchester City",
+    "logo": "https://cdn.sofifa.net/meta/team/10/120.png",
+    "rating": 88
+  },
+  {
+    "name": "Antonio Rüdiger",
+    "photo": "https://cdn.sofifa.net/players/205/452/25_120.png",
+    "position": "CB",
+    "nationality": "Germany",
+    "flag": "https://cdn.sofifa.net/flags/de.png",
+    "club": "Real Madrid",
+    "logo": "https://cdn.sofifa.net/meta/team/243/120.png",
+    "rating": 88
+  },
+  {
+    "name": "Éder Militão",
+    "photo": "https://cdn.sofifa.net/players/235/212/25_120.png",
+    "position": "CB",
+    "nationality": "Brazil",
+    "flag": "https://cdn.sofifa.net/flags/br.png",
+    "club": "Real Madrid",
+    "logo": "https://cdn.sofifa.net/meta/team/243/120.png",
+    "rating": 85
+  },
+  {
+    "name": "Andrew Robertson",
+    "photo": "https://cdn.sofifa.net/players/209/955/25_120.png",
+    "position": "LB",
+    "nationality": "Scotland",
+    "flag": "https://cdn.sofifa.net/flags/gb-sct.png",
+    "club": "Liverpool",
+    "logo": "https://cdn.sofifa.net/meta/team/10/120.png",
+    "rating": 87
+  },
+  {
+    "name": "Jordi Alba",
+    "photo": "https://cdn.sofifa.net/players/189/332/25_120.png",
+    "position": "LB",
+    "nationality": "Spain",
+    "flag": "https://cdn.sofifa.net/flags/es.png",
+    "club": "Inter Miami",
+    "logo": "https://cdn.sofifa.net/meta/team/112243/120.png",
+    "rating": 85
+  },
+  {
+    "name": "Theo Hernández",
+    "photo": "https://cdn.sofifa.net/players/228/732/25_120.png",
+    "position": "LB",
+    "nationality": "France",
+    "flag": "https://cdn.sofifa.net/flags/fr.png",
+    "club": "AC Milan",
+    "logo": "https://cdn.sofifa.net/meta/team/47/120.png",
+    "rating": 86
+  },
+  {
+    "name": "Ben Chilwell",
+    "photo": "https://cdn.sofifa.net/players/232/762/25_120.png",
+    "position": "LB",
+    "nationality": "England",
+    "flag": "https://cdn.sofifa.net/flags/gb-eng.png",
+    "club": "Chelsea",
+    "logo": "https://cdn.sofifa.net/meta/team/5/120.png",
+    "rating": 84
+  },
+  {
+    "name": "Trent Alexander-Arnold",
+    "photo": "https://cdn.sofifa.net/players/231/281/25_120.png",
+    "position": "RB",
+    "nationality": "England",
+    "flag": "https://cdn.sofifa.net/flags/gb-eng.png",
+    "club": "Liverpool",
+    "logo": "https://cdn.sofifa.net/meta/team/10/120.png",
+    "rating": 87
+  },
+  {
+    "name": "Achraf Hakimi",
+    "photo": "https://cdn.sofifa.net/players/235/212/25_120.png",
+    "position": "RB",
+    "nationality": "Morocco",
+    "flag": "https://cdn.sofifa.net/flags/ma.png",
+    "club": "Paris Saint-Germain",
+    "logo": "https://cdn.sofifa.net/meta/team/73/120.png",
+    "rating": 84
+  },
+  {
+    "name": "Kyle Walker",
+    "photo": "https://cdn.sofifa.net/players/192/448/25_120.png",
+    "position": "RB",
+    "nationality": "England",
+    "flag": "https://cdn.sofifa.net/flags/gb-eng.png",
+    "club": "Manchester City",
+    "logo": "https://cdn.sofifa.net/meta/team/10/120.png",
+    "rating": 84
+  },
+  {
+    "name": "Reece James",
+    "photo": "https://cdn.sofifa.net/players/232/756/25_120.png",
+    "position": "RB",
+    "nationality": "England",
+    "flag": "https://cdn.sofifa.net/flags/gb-eng.png",
+    "club": "Chelsea",
+    "logo": "https://cdn.sofifa.net/meta/team/5/120.png",
+    "rating": 83
+  },
+  {
+    "name": "Neymar Jr",
+    "photo": "https://cdn.sofifa.net/players/190/871/25_120.png",
+    "position": "LW",
+    "nationality": "Brazil",
+    "flag": "https://cdn.sofifa.net/flags/br.png",
+    "club": "Al-Hilal",
+    "logo": "https://cdn.sofifa.net/meta/team/112243/120.png",
+    "rating": 90
+  },
+  {
+    "name": "Vinícius Jr",
+    "photo": "https://cdn.sofifa.net/players/238/794/25_120.png",
+    "position": "LW",
+    "nationality": "Brazil",
+    "flag": "https://cdn.sofifa.net/flags/br.png",
+    "club": "Real Madrid",
+    "logo": "https://cdn.sofifa.net/meta/team/243/120.png",
+    "rating": 89
+  },
+  {
+    "name": "Phil Foden",
+    "photo": "https://cdn.sofifa.net/players/233/564/25_120.png",
+    "position": "LW",
+    "nationality": "England",
+    "flag": "https://cdn.sofifa.net/flags/gb-eng.png",
+    "club": "Manchester City",
+    "logo": "https://cdn.sofifa.net/meta/team/10/120.png",
+    "rating": 88
+  },
+  {
+    "name": "Leroy Sané",
+    "photo": "https://cdn.sofifa.net/players/226/853/25_120.png",
+    "position": "LW",
+    "nationality": "Germany",
+    "flag": "https://cdn.sofifa.net/flags/de.png",
+    "club": "Bayern Munich",
+    "logo": "https://cdn.sofifa.net/meta/team/21/120.png",
+    "rating": 87
   }
 ]
