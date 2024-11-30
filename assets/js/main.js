@@ -153,8 +153,5 @@ document.querySelector("#removeTeam").addEventListener("click", () => {
 
     // Hide the player cards section
     document.querySelector("#playerCardElem").classList.add("hidden");
-
-    // Provide feedback (optional)
-    alert("The team has been removed successfully.");
   }
 });
