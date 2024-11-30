@@ -88,18 +88,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.querySelector("#teamForm").addEventListener("submit", (e) => {
   e.preventDefault();
-  const teamName = document.querySelector("#teamName").value.trim();
-  const teamFormation = document.querySelector("#teamFormation").value.trim();
-  if (teamName != "" && teamFormation != "") {
+
+  // Check if data has already been appended
+  if (document.querySelector("#displayData").children.length > 0) {
+    console.warn("Team details already added!");
+    return; // Exit the function if data already exists
+  }
+
+  // Get input field elements
+  const teamNameInput = document.querySelector("#teamName");
+  const teamFormationInput = document.querySelector("#teamFormation");
+
+  // Get trimmed values
+  const teamName = teamNameInput.value.trim();
+  const teamFormation = teamFormationInput.value.trim();
+
+  // Check if inputs are not empty
+  if (teamName !== "" && teamFormation !== "") {
     const nameTeamBloc = document.createElement("div");
     nameTeamBloc.className =
       "flex justify-between items-center flex-col m-auto p-2";
     nameTeamBloc.innerHTML = `
-    <p class="text-white text-center text-[24px]">${teamName}</p>
-    <p class="text-white text-center text-[24px]">${teamFormation}</p>
+      <p class="text-white text-center text-[24px]">${teamName}</p>
+      <p class="text-white text-center text-[24px]">${teamFormation}</p>
     `;
+
     document.querySelector("#displayData").append(nameTeamBloc);
     document.querySelector("#playerCardElem").classList.remove("hidden");
+
+    // Clear input fields
+    teamNameInput.value = "";
+    teamFormationInput.value = "";
   }
 });
 
@@ -122,4 +141,20 @@ function showModal() {
 closeModalButton.addEventListener("click", () => {
   modalContainer.classList.remove("flex");
   modalContainer.classList.add("hidden");
+});
+
+document.querySelector("#removeTeam").addEventListener("click", () => {
+  // Show confirmation alert
+  const confirmRemoval = confirm("Are you sure you want to remove the team?");
+
+  if (confirmRemoval) {
+    // Clear the team name and formation
+    document.querySelector("#displayData").innerHTML = "";
+
+    // Hide the player cards section
+    document.querySelector("#playerCardElem").classList.add("hidden");
+
+    // Provide feedback (optional)
+    alert("The team has been removed successfully.");
+  }
 });
