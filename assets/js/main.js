@@ -61,10 +61,14 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateStadiumCard(stadiumCard, player) {
     stadiumCard.innerHTML = `
       <div class="bg-[url('./assets/img/emptyCard.png')] bg-contain bg-no-repeat bg-center w-16 h-12 lg:w-24 lg:h-24 cursor-pointer">
-        <img class="w-4 right-14 m-auto" src="${player.logo}" alt="${player.club}" />
-        <img class="relative m-auto w-3 top-1 border border-white shadow-lg " src="${player.flag}" alt="${player.nationality}" />
-        <p class="relative text-white font-semibold bottom-4 left-3 text-[12px] shadow-lg p-2">${player.rating}</p>
-        <img class="relative w-10 bottom-8 left-5 object-cover [mask-image:linear-gradient(to_top,rgba(0,0,0,0)_2%,rgba(0,0,0,1)_8%)]" src="${player.photo}" alt="${player.name}" />
+        <img class="w-3 left-[22px] top-[20px] relative shadow-lg" src="${player.logo}" alt="${player.club}" />
+        <img class="relative m-auto bottom-2 w-3 border border-white shadow-lg " src="${player.flag}" alt="${player.nationality}" />
+        <p class="relative text-white font-semibold left-[14px] text-[10px] shadow-lg p-2">${player.rating}</p>
+        <img class="relative w-12 bottom-10 left-6 object-cover [mask-image:linear-gradient(to_top,rgba(0,0,0,0)_2%,rgba(0,0,0,1)_8%)]" src="${player.photo}" alt="${player.name}" />
+        <div class="grid grid-cols-6 grid-rows-2 ">
+          <p class="grid-cols-1 grid-rows-1 text-white text-[10px]">${player.rating}</p>
+          <p class="grid-cols-2 grid-rows-2 text-white text-[10px]">${player.rating}</p>
+        </div>
       </div>
     `;
   }
