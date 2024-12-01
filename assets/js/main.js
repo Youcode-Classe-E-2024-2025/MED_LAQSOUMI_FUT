@@ -63,9 +63,9 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="bg-[url('./assets/img/emptyCard.png')] bg-contain bg-no-repeat bg-center w-16 h-12 lg:w-24 lg:h-24 cursor-pointer">
         <img class="w-3 left-[22px] top-[20px] relative shadow-lg" src="${player.logo}" alt="${player.club}" />
         <img class="relative m-auto bottom-2 w-3 border border-white shadow-lg " src="${player.flag}" alt="${player.nationality}" />
-        <p class="relative text-white font-semibold left-[14px] text-[10px] top-1 shadow-lg p-2">${player.rating}</p>
-        <img class="relative w-12 bottom-9 left-[24px] object-cover [mask-image:linear-gradient(to_top,rgba(0,0,0,0)_2%,rgba(0,0,0,1)_8%)]" src="${player.photo}" alt="${player.name}" />
-        <div class="relative grid grid-cols-6 grid-rows-2 bottom-[39px] left-[25px] text-[8px] text-yellow-200 gap-x-1 gap-y-0">
+        <p class="relative text-white font-semibold left-[22px] text-[10px] top-3">${player.rating}</p>
+        <img class="relative w-12 bottom-[22px] left-[24px] object-cover bg-black bg-opacity-10 rounded-full [mask-image:linear-gradient(to_top,rgba(0,0,0,0)_2%,rgba(0,0,0,1)_8%)]" src="${player.photo}" alt="${player.name}" />
+        <div class="relative grid grid-cols-3 grid-rows-2 bottom-[26px] left-[20px] text-[8px] text-yellow-200 w-14 rounded-lg bg-black bg-opacity-20 text-center">
           <p class="cols-start-1 row-start-1">DR</p>
           <p class="cols-start-2 row-start-1">SH</p>
           <p class="cols-start-3 row-start-1">PAS</p>
@@ -99,8 +99,7 @@ document.querySelector("#teamForm").addEventListener("submit", (e) => {
 
   // Check if data has already been appended
   if (document.querySelector("#displayData").children.length > 0) {
-    console.warn("Team details already added!");
-    return; // Exit the function if data already exists
+    return;
   }
 
   // Get input field elements
@@ -117,7 +116,7 @@ document.querySelector("#teamForm").addEventListener("submit", (e) => {
     nameTeamBloc.className =
       "flex justify-between items-center flex-col m-auto p-2";
     nameTeamBloc.innerHTML = `
-      <p class="text-white text-center text-[24px]">${teamName}</p>
+      <p class="text-white text-center font-bold text-[24px]">${teamName}</p>
       <p class="text-white text-center text-[24px]">${teamFormation}</p>
     `;
 
