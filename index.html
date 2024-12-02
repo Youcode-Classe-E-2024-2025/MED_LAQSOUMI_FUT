@@ -122,120 +122,123 @@
             </h2>
 
             <!-- Modal Content -->
-            <div id="playerList" class="grid grid-cols-4"></div>
+            <div
+              id="playerList"
+              class="flex flex-row justify-between items-center"
+            ></div>
           </div>
         </div>
+      </div>
+      <div
+        class="bg-[url('/assets/img/1137.jpg')] bg-contain bg-no-repeat bg-center h-screen w-screen lg:h-[130vh] mx-auto lg:max-w-2xl md:h-screen md:screen object-contain object-center"
+      >
         <div
-          class="bg-[url('/assets/img/1137.jpg')] bg-contain bg-no-repeat bg-center h-screen w-screen lg:h-[130vh] mx-auto lg:max-w-2xl md:h-screen md:screen object-contain object-center"
+          id="playerCardElem"
+          class="grid grid-cols-12 grid-rows-12 lg:grid-cols-12 lg:grid-rows-12 w-[100vw] h-[100vh] lg:h-[130vh] hidden"
         >
+          <!-- ATT -->
           <div
-            id="playerCardElem"
-            class="grid grid-cols-12 grid-rows-12 lg:grid-cols-12 lg:grid-rows-12 hidden"
+            class="player-card ST m-auto col-start-6 col-span-2 row-start-1 lg:col-start-6 lg:row-start-1"
           >
-            <!-- ATT -->
-            <div
-              class="player-card m-auto col-start-6 col-span-2 row-start-1 lg:col-start-6 lg:row-start-1"
-            >
-              <img
-                src="./assets/img/emptyCard.png"
-                class="w-12 lg:w-16 hover:scale-150 cursor-pointer"
-                alt="ST"
-              />
-            </div>
-            <div
-              class="player-card m-auto col-start-3 col-span-2 row-start-2 md:col-start-4 md:col-span-2 md:row-start-2 lg:col-start-3 lg:row-start-2"
-            >
-              <img
-                src="./assets/img/emptyCard.png"
-                class="w-12 lg:w-16 hover:scale-150 cursor-pointer"
-                alt="LW"
-              />
-            </div>
-            <div
-              class="player-card m-auto col-start-9 col-span-2 row-start-2 md:col-start-8 md:col-span-2 md:row-start-2 lg:col-start-9 lg:row-start-2"
-            >
-              <img
-                src="./assets/img/emptyCard.png"
-                class="w-12 lg:w-16 hover:scale-150 cursor-pointer"
-                alt="RW"
-              />
-            </div>
+            <img
+              src="./assets/img/emptyCard.png"
+              class="w-12 lg:w-16 hover:scale-150 cursor-pointer"
+              alt="ST"
+            />
+          </div>
+          <div
+            class="player-card LW m-auto col-start-3 col-span-2 row-start-2 md:col-start-4 md:col-span-2 md:row-start-2 lg:col-start-3 lg:row-start-2"
+          >
+            <img
+              src="./assets/img/emptyCard.png"
+              class="w-12 lg:w-16 hover:scale-150 cursor-pointer"
+              alt="LW"
+            />
+          </div>
+          <div
+            class="player-card RW m-auto col-start-9 col-span-2 row-start-2 md:col-start-8 md:col-span-2 md:row-start-2 lg:col-start-9 lg:row-start-2"
+          >
+            <img
+              src="./assets/img/emptyCard.png"
+              class="w-12 lg:w-16 hover:scale-150 cursor-pointer"
+              alt="RW"
+            />
+          </div>
 
-            <!-- MID -->
-            <div
-              class="player-card m-auto col-start-6 col-span-2 row-start-4 md:col-start-6 md:col-span-2 md:row-start-3 lg:col-start-6 lg:row-start-5"
-            >
-              <img
-                src="./assets/img/emptyCard.png"
-                class="w-12 lg:w-16 hover:scale-150 cursor-pointer"
-                alt="CDM"
-              />
-            </div>
-            <div
-              class="player-card m-auto col-start-9 col-span-2 row-start-4 md:col-start-8 md:col-span-2 md:row-start-4 lg:col-start-8 lg:row-start-4"
-            >
-              <img
-                src="./assets/img/emptyCard.png"
-                class="w-12 lg:w-16 hover:scale-150 cursor-pointer"
-                alt="CM"
-              />
-            </div>
-            <div
-              class="player-card m-auto col-start-3 col-span-2 row-start-4 md:col-start-4 md:col-span-2 md:row-start-4 lg:col-start-4 lg:row-start-4"
-            >
-              <img
-                src="./assets/img/emptyCard.png"
-                class="w-12 lg:w-16 hover:scale-150 cursor-pointer"
-                alt="CM"
-              />
-            </div>
-            <!-- DEF -->
-            <div
-              class="player-card m-auto col-start-2 col-span-2 row-start-5 md:col-start-4 md:col-span-2 md:row-start-5 lg:col-start-3 lg:row-start-6"
-            >
-              <img
-                src="./assets/img/emptyCard.png"
-                class="w-12 lg:w-16 hover:scale-150 cursor-pointer"
-                alt="LB"
-              />
-            </div>
-            <div
-              class="player-card m-auto col-start-10 col-span-2 row-start-5 md:col-start-8 md:col-span-2 md:row-start-5 lg:col-start-9 lg:row-start-6"
-            >
-              <img
-                src="./assets/img/emptyCard.png"
-                class="w-12 lg:w-16 hover:scale-150 cursor-pointer"
-                alt="RB"
-              />
-            </div>
-            <div
-              class="player-card m-auto col-start-8 col-span-2 row-start-6 md:col-start-7 md:col-span-2 md:row-start-6 lg:col-start-7 lg:row-start-7"
-            >
-              <img
-                src="./assets/img/emptyCard.png"
-                class="w-12 lg:w-16 hover:scale-150 cursor-pointer"
-                alt="CB"
-              />
-            </div>
-            <div
-              class="player-card m-auto col-start-4 col-span-2 row-start-6 md:col-start-5 md:col-span-2 md:row-start-6 lg:col-start-5 lg:row-start-7"
-            >
-              <img
-                src="./assets/img/emptyCard.png"
-                class="w-12 lg:w-16 hover:scale-150 cursor-pointer"
-                alt="CB"
-              />
-            </div>
-            <!-- GK -->
-            <div
-              class="player-card m-auto col-start-6 col-span-2 row-start-7 lg:col-start-6 lg:row-start-8"
-            >
-              <img
-                src="./assets/img/emptyCard.png"
-                class="w-12 lg:w-16 hover:scale-150 cursor-pointer"
-                alt="GK"
-              />
-            </div>
+          <!-- MID -->
+          <div
+            class="player-card CDM m-auto col-start-6 col-span-2 row-start-7 md:col-start-6 md:col-span-2 md:row-start-7 lg:col-start-6 lg:row-start-7"
+          >
+            <img
+              src="./assets/img/emptyCard.png"
+              class="w-12 lg:w-16 hover:scale-150 cursor-pointer"
+              alt="CDM"
+            />
+          </div>
+          <div
+            class="player-card CM m-auto col-start-9 col-span-2 row-start-5 md:col-start-8 md:col-span-2 md:row-start-5 lg:col-start-8 lg:row-start-5"
+          >
+            <img
+              src="./assets/img/emptyCard.png"
+              class="w-12 lg:w-16 hover:scale-150 cursor-pointer"
+              alt="CM"
+            />
+          </div>
+          <div
+            class="player-card CM m-auto col-start-3 col-span-2 row-start-5 md:col-start-4 md:col-span-2 md:row-start-5 lg:col-start-4 lg:row-start-5"
+          >
+            <img
+              src="./assets/img/emptyCard.png"
+              class="w-12 lg:w-16 hover:scale-150 cursor-pointer"
+              alt="CM"
+            />
+          </div>
+          <!-- DEF -->
+          <div
+            class="player-card LB m-auto col-start-2 col-span-2 row-start-8 md:col-start-4 md:col-span-2 md:row-start-8 lg:col-start-3 lg:row-start-8"
+          >
+            <img
+              src="./assets/img/emptyCard.png"
+              class="w-12 lg:w-16 hover:scale-150 cursor-pointer"
+              alt="LB"
+            />
+          </div>
+          <div
+            class="player-card RB m-auto col-start-10 col-span-2 row-start-8 md:col-start-8 md:col-span-2 md:row-start-8 lg:col-start-9 lg:row-start-8"
+          >
+            <img
+              src="./assets/img/emptyCard.png"
+              class="w-12 lg:w-16 hover:scale-150 cursor-pointer"
+              alt="RB"
+            />
+          </div>
+          <div
+            class="player-card CB m-auto col-start-8 col-span-2 row-start-9 md:col-start-7 md:col-span-2 md:row-start-9 lg:col-start-7 lg:row-start-9"
+          >
+            <img
+              src="./assets/img/emptyCard.png"
+              class="w-12 lg:w-16 hover:scale-150 cursor-pointer"
+              alt="CB"
+            />
+          </div>
+          <div
+            class="player-card CB m-auto col-start-4 col-span-2 row-start-9 md:col-start-5 md:col-span-2 md:row-start-9 lg:col-start-5 lg:row-start-9"
+          >
+            <img
+              src="./assets/img/emptyCard.png"
+              class="w-12 lg:w-16 hover:scale-150 cursor-pointer"
+              alt="CB"
+            />
+          </div>
+          <!-- GK -->
+          <div
+            class="player-card GK m-auto col-start-6 col-span-2 row-start-11 lg:col-start-6 lg:row-start-11"
+          >
+            <img
+              src="./assets/img/emptyCard.png"
+              class="w-12 lg:w-16 hover:scale-150 cursor-pointer"
+              alt="GK"
+            />
           </div>
         </div>
       </div>
