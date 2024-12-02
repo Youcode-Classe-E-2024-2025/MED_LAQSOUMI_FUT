@@ -3,29 +3,42 @@ document.addEventListener("DOMContentLoaded", (e) => {
   const modal = document.querySelector("#modal");
   const playerList = document.querySelector("#playerList");
   let selectedStadiumCard = null; // To keep track of the clicked stadium card
+
   // Add click event to each stadium player card
-  document.querySelectorAll(".player-card").forEach((stadiumCardImg) => {
-    stadiumCardImg.addEventListener("click", (e) => {
+  document.querySelectorAll(".player-card img").forEach((imgElement) => {
+    imgElement.addEventListener("click", (e) => {
       selectedStadiumCard = e.target.parentElement; // Save the clicked stadium card
+      const playerPosition = e.target.alt; // Get position from img alt attribute
       openModal(); // Open the modal to select a player
-      fetchPlayerData(); // Load player data into the modal
+      fetchPlayerData(playerPosition); // Load player data into the modal based on the position
     });
   });
 
-  // Function to fetch player data and populate the modal
-  function fetchPlayerData() {
+  // Function to fetch player data and populate the modal based on position
+  function fetchPlayerData(position) {
     // Clear previous player cards in the modal
     playerList.innerHTML = "";
 
     // Fetch data from the JSON file
     fetch("./Data/players.json")
       .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to load player data.");
+        }
         return response.json();
       })
       .then((players) => {
-        players.slice(0, 18).forEach((player) => {
+        // Filter players by position
+        const filteredPlayers = players.filter(
+          (player) => player.position === position
+        );
+
+        // Limit to a maximum of 18 players, adjust as necessary
+        filteredPlayers.forEach((player) => {
           const playerCard = document.createElement("div");
           playerCard.className = "player-card cursor-pointer";
+
+          // Set the player card content
           playerCard.innerHTML = `
             <div class="bg-[url('./assets/img/emptyCard.png')] bg-contain bg-no-repeat bg-center w-16 h-12 lg:w-24 lg:h-24 cursor-pointer hover:scale-150">
               <img class="w-3 left-[22px] top-[20px] relative shadow-lg" src="${player.logo}" alt="${player.club}" />
@@ -52,6 +65,9 @@ document.addEventListener("DOMContentLoaded", (e) => {
           // Append the player card to the modal's player list
           playerList.appendChild(playerCard);
         });
+      })
+      .catch((error) => {
+        console.error("Error loading players: ", error);
       });
   }
 
