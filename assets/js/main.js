@@ -78,8 +78,8 @@ document.addEventListener("DOMContentLoaded", (e) => {
         <img class="w-[12px] left-[2px] top-[12px] lg:w-3 lg:left-[22px] lg:top-[20px] relative shadow-lg" src="${player.logo}" alt="${player.club}" />
         <img class="relative m-auto lg:bottom-2 bottom-1 w-3 border border-white shadow-lg" src="${player.flag}" alt="${player.nationality}" />
         <p class="relative text-white font-semibold left-[6px] text-[7px] top-1 lg:left-[22px] lg:text-[10px] lg:top-3">${player.rating}</p>
-        <img class="relative w-8 bottom-[14px] left-[8px] lg:w-12 lg:bottom-[12px] lg:left-[24px] object-cover bg-black bg-opacity-10 rounded-full [mask-image:linear-gradient(to_top,rgba(0,0,0,0)_2%,rgba(0,0,0,1)_8%)]" src="${player.photo}" alt="${player.name}" />
-        <div class="relative grid grid-cols-3 grid-rows-2 bottom-[15px] left-[8px] lg:left-[20px] text-[6px] lg:text-[8px] text-yellow-200 w-8 lg:w-14 rounded-lg bg-black bg-opacity-20 text-center">
+        <img class="relative w-8 bottom-[14px] left-[8px] lg:w-12 lg:bottom-[18px] lg:left-[24px] object-cover bg-black bg-opacity-10 rounded-full [mask-image:linear-gradient(to_top,rgba(0,0,0,0)_2%,rgba(0,0,0,1)_8%)]" src="${player.photo}" alt="${player.name}" />
+        <div class="relative grid grid-cols-3 grid-rows-2 bottom-[15px] lg:bottom-[24px] left-[8px] lg:left-[20px] text-[6px] lg:text-[8px] text-yellow-200 w-8 lg:w-14 rounded-lg bg-black bg-opacity-20 text-center">
           <p class="cols-start-1 row-start-1">DR</p>
           <p class="cols-start-2 row-start-1">SH</p>
           <p class="cols-start-3 row-start-1">PAS</p>

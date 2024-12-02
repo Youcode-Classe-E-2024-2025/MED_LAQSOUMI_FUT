@@ -1728,6 +1728,30 @@ video {
     bottom: 0.5rem;
   }
 
+  .lg\:bottom-\[15px\] {
+    bottom: 15px;
+  }
+
+  .lg\:bottom-\[14px\] {
+    bottom: 14px;
+  }
+
+  .lg\:bottom-\[px\] {
+    bottom: px;
+  }
+
+  .lg\:bottom-\[18px\] {
+    bottom: 18px;
+  }
+
+  .lg\:bottom-\[16px\] {
+    bottom: 16px;
+  }
+
+  .lg\:bottom-\[24px\] {
+    bottom: 24px;
+  }
+
   .lg\:col-start-3 {
     grid-column-start: 3;
   }
@@ -1826,6 +1850,26 @@ video {
 
   .lg\:w-14 {
     width: 3.5rem;
+  }
+
+  .lg\:w-0 {
+    width: 0px;
+  }
+
+  .lg\:w-screen {
+    width: 100vw;
+  }
+
+  .lg\:w-\[\] {
+    width: ;
+  }
+
+  .lg\:w-\[100\F9\] {
+    width: 100ù;
+  }
+
+  .lg\:w-\[100\%\] {
+    width: 100%;
   }
 
   .lg\:max-w-2xl {
