@@ -22,6 +22,7 @@ fetch("../Data/players.json")
           <th class="border border-gray-300 px-2 md:px-4 py-2">Dribbling</th>
           <th class="border border-gray-300 px-2 md:px-4 py-2">Defending</th>
           <th class="border border-gray-300 px-2 md:px-4 py-2">Physical</th>
+          <th class="border border-gray-300 px-2 md:px-4 py-2 w-28">Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -29,7 +30,7 @@ fetch("../Data/players.json")
     `;
 
     const tbody = table.querySelector("tbody");
-    players.forEach((player) => {
+    players.forEach((player, index) => {
       const row = document.createElement("tr");
       row.innerHTML = `
         <td class="border border-gray-300 px-2 py-2 text-center">
@@ -72,14 +73,82 @@ fetch("../Data/players.json")
         <td class="border border-gray-300 px-2 py-2 text-center">${
           player.physical || "-"
         }</td>
+        <td class="border border-gray-300 px-2 py-2 text-center flex flex-row justify-around">
+          <button class="edit-btn fa-solid fa-pen-to-square p-3 rounded-md bg-yellow-600 hover:bg-yellow-400 transition-all text-white hover:scale-110" data-index="${index}"></button>
+          <button class="delete-btn fa-solid fa-trash p-3 rounded-md bg-red-600 hover:bg-red-400 transition-all text-white hover:scale-110" data-index="${index}"></button>
+        </td>
       `;
       tbody.appendChild(row);
+
+      // Add event listener for the delete button
+      row.querySelector(".delete-btn").addEventListener("click", () => {
+        row.remove(); // Remove the row from the DOM
+        players.splice(index, 1); // Optionally remove it from the data source
+        const totalPlace = document.querySelector("#totalPlayers");
+        totalPlace.textContent = `Total Players: ${players.length}`;
+      });
+
+      // Add event listener for the edit button
+      row.querySelector(".edit-btn").addEventListener("click", () => {
+        const nameCell = row.children[1];
+        const positionCell = row.children[2];
+        const clubCell = row.children[4];
+        const rateCell = row.children[5];
+        const paceCell = row.children[6];
+        const shootCell = row.children[7];
+        const passCell = row.children[8];
+        const driblCell = row.children[9];
+        const defendCell = row.children[10];
+        const physicCell = row.children[11];
+        const newName = prompt("Enter new name:", nameCell.textContent);
+        const newPosition = prompt(
+          "Enter new position:",
+          positionCell.textContent
+        );
+        const clubImg = prompt(
+          "Enter the player club img:",
+          clubCell.textContent
+        );
+        const ratingNumber = prompt(
+          "Enter the rating number:",
+          rateCell.textContent
+        );
+        const Pace = prompt("Enter the Pace number:", paceCell.textContent);
+        const Shooting = prompt(
+          "Enter the Shooting number:",
+          shootCell.textContent
+        );
+        const Passing = prompt(
+          "Enter the Passing number:",
+          passCell.textContent
+        );
+        const Dribbling = prompt(
+          "Enter the Dribbling number:",
+          driblCell.textContent
+        );
+        const Defending = prompt(
+          "Enter the Defending number:",
+          defendCell.textContent
+        );
+        const physical = prompt(
+          "Enter the physical number:",
+          physicCell.textContent
+        );
+        if (newName) nameCell.textContent = newName;
+        if (newPosition) positionCell.textContent = newPosition;
+        if (clubImg) clubCell.textContent = clubImg;
+        if (ratingNumber) rateCell.textContent = ratingNumber;
+        if (Pace) paceCell.textContent = Pace;
+        if (Shooting) shootCell.textContent = Shooting;
+        if (Passing) passCell.textContent = Passing;
+        if (Dribbling) driblCell.textContent = Dribbling;
+        if (Defending) defendCell.textContent = Defending;
+        if (physical) physicCell.textContent = physical;
+      });
     });
-
-    playersSection.appendChild(table);
-
     const totalPlace = document.querySelector("#totalPlayers");
     totalPlace.textContent = `Total Players: ${players.length}`;
+    playersSection.appendChild(table);
   });
 
 // =====================================================
@@ -91,7 +160,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
   let selectedStadiumCard = null; // To keep track of the clicked stadium card
 
   // Add click event to each stadium player card
-  document.querySelectorAll(".player-card img").forEach((imgElement) => {
+  document.querySelectorAll(".player-card").forEach((imgElement) => {
     imgElement.addEventListener("click", (e) => {
       selectedStadiumCard = e.target.parentElement; // Save the clicked stadium card
       const playerPosition = e.target.alt; // Get position from img alt attribute
