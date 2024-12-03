@@ -80,70 +80,67 @@ fetch("../Data/players.json")
       `;
       tbody.appendChild(row);
 
-      // Add event listener for the delete button
       row.querySelector(".delete-btn").addEventListener("click", () => {
-        row.remove(); // Remove the row from the DOM
-        players.splice(index, 1); // Optionally remove it from the data source
+        row.remove();
+        players.splice(index, 1);
         const totalPlace = document.querySelector("#totalPlayers");
         totalPlace.textContent = `Total Players: ${players.length}`;
       });
 
-      // Add event listener for the edit button
       row.querySelector(".edit-btn").addEventListener("click", () => {
-        const nameCell = row.children[1];
-        const positionCell = row.children[2];
-        const clubCell = row.children[4];
-        const rateCell = row.children[5];
-        const paceCell = row.children[6];
-        const shootCell = row.children[7];
-        const passCell = row.children[8];
-        const driblCell = row.children[9];
-        const defendCell = row.children[10];
-        const physicCell = row.children[11];
-        const newName = prompt("Enter new name:", nameCell.textContent);
-        const newPosition = prompt(
-          "Enter new position:",
-          positionCell.textContent
-        );
-        const clubImg = prompt(
-          "Enter the player club img:",
-          clubCell.textContent
-        );
-        const ratingNumber = prompt(
-          "Enter the rating number:",
-          rateCell.textContent
-        );
-        const Pace = prompt("Enter the Pace number:", paceCell.textContent);
-        const Shooting = prompt(
-          "Enter the Shooting number:",
-          shootCell.textContent
-        );
-        const Passing = prompt(
-          "Enter the Passing number:",
-          passCell.textContent
-        );
-        const Dribbling = prompt(
-          "Enter the Dribbling number:",
-          driblCell.textContent
-        );
-        const Defending = prompt(
-          "Enter the Defending number:",
-          defendCell.textContent
-        );
-        const physical = prompt(
-          "Enter the physical number:",
-          physicCell.textContent
-        );
-        if (newName) nameCell.textContent = newName;
-        if (newPosition) positionCell.textContent = newPosition;
-        if (clubImg) clubCell.textContent = clubImg;
-        if (ratingNumber) rateCell.textContent = ratingNumber;
-        if (Pace) paceCell.textContent = Pace;
-        if (Shooting) shootCell.textContent = Shooting;
-        if (Passing) passCell.textContent = Passing;
-        if (Dribbling) driblCell.textContent = Dribbling;
-        if (Defending) defendCell.textContent = Defending;
-        if (physical) physicCell.textContent = physical;
+        const editModal = document.getElementById("editModal");
+        const editForm = document.getElementById("editForm");
+
+        const nameInput = document.getElementById("editName");
+        const positionInput = document.getElementById("editPosition");
+        const clubImgInput = document.getElementById("editClubImg");
+        const ratingInput = document.getElementById("editRating");
+        const paceInput = document.getElementById("editPace");
+        const shootingInput = document.getElementById("editShooting");
+        const passingInput = document.getElementById("editPassing");
+        const dribblingInput = document.getElementById("editDribbling");
+        const defendingInput = document.getElementById("editDefending");
+        const physicalInput = document.getElementById("editPhysical");
+
+        // Populate inputs with current values
+        nameInput.value = row.children[1].textContent.trim();
+        positionInput.value = row.children[2].textContent.trim();
+        clubImgInput.value = row.children[4].querySelector("img").src;
+        ratingInput.value = row.children[5].textContent.trim();
+        paceInput.value = row.children[6].textContent.trim();
+        shootingInput.value = row.children[7].textContent.trim();
+        passingInput.value = row.children[8].textContent.trim();
+        dribblingInput.value = row.children[9].textContent.trim();
+        defendingInput.value = row.children[10].textContent.trim();
+        physicalInput.value = row.children[11].textContent.trim();
+
+        // Show modal
+        editModal.classList.remove("hidden");
+
+        // Handle form submission
+        editForm.onsubmit = (e) => {
+          e.preventDefault();
+
+          // Update the row with new values
+          row.children[1].textContent = nameInput.value.trim();
+          row.children[2].textContent = positionInput.value.trim();
+          row.children[4].querySelector("img").src = clubImgInput.value.trim();
+          row.children[5].textContent = ratingInput.value.trim();
+          row.children[6].textContent = paceInput.value.trim();
+          row.children[7].textContent = shootingInput.value.trim();
+          row.children[8].textContent = passingInput.value.trim();
+          row.children[9].textContent = dribblingInput.value.trim();
+          row.children[10].textContent = defendingInput.value.trim();
+          row.children[11].textContent = physicalInput.value.trim();
+
+          // Hide modal
+          editModal.classList.add("hidden");
+        };
+
+        // Handle cancel button
+        document.getElementById("cancelEdit").onclick = () => {
+          editModal.classList.add("hidden");
+        };
       });
     });
     const totalPlace = document.querySelector("#totalPlayers");
@@ -151,30 +148,24 @@ fetch("../Data/players.json")
     playersSection.appendChild(table);
   });
 
-// =====================================================
-
 document.addEventListener("DOMContentLoaded", (e) => {
   e.preventDefault();
   const modal = document.querySelector("#modal");
   const playerList = document.querySelector("#playerList");
-  let selectedStadiumCard = null; // To keep track of the clicked stadium card
+  let selectedStadiumCard = null;
 
-  // Add click event to each stadium player card
   document.querySelectorAll(".player-card").forEach((imgElement) => {
     imgElement.addEventListener("click", (e) => {
-      selectedStadiumCard = e.target.parentElement; // Save the clicked stadium card
-      const playerPosition = e.target.alt; // Get position from img alt attribute
-      openModal(); // Open the modal to select a player
-      fetchPlayerData(playerPosition); // Load player data into the modal based on the position
+      selectedStadiumCard = e.target.parentElement;
+      const playerPosition = e.target.alt;
+      openModal();
+      fetchPlayerData(playerPosition);
     });
   });
 
-  // Function to fetch player data and populate the modal based on position
   function fetchPlayerData(position) {
-    // Clear previous player cards in the modal
     playerList.innerHTML = "";
 
-    // Fetch data from the JSON file
     fetch("./Data/players.json")
       .then((response) => {
         if (!response.ok) {
@@ -183,17 +174,14 @@ document.addEventListener("DOMContentLoaded", (e) => {
         return response.json();
       })
       .then((players) => {
-        // Filter players by position
         const filteredPlayers = players.filter(
           (player) => player.position === position
         );
 
-        // Limit to a maximum of 18 players, adjust as necessary
         filteredPlayers.forEach((player) => {
           const playerCard = document.createElement("div");
           playerCard.className = "player-card cursor-pointer";
 
-          // Set the player card content
           playerCard.innerHTML = `
             <div class="bg-[url('./assets/img/emptyCard.png')] bg-contain bg-no-repeat bg-center w-12 lg:w-24 lg:h-24 cursor-pointer">
               <img class="w-[12px] left-[2px] top-[12px] lg:w-3 lg:left-[22px] lg:top-[20px] relative shadow-lg" src="${player.logo}" alt="${player.club}" />
@@ -211,13 +199,11 @@ document.addEventListener("DOMContentLoaded", (e) => {
             </div>
           `;
 
-          // Add click event to select the player and update the stadium card
           playerCard.addEventListener("click", () => {
             updateStadiumCard(selectedStadiumCard, player);
-            closeModal(); // Close the modal after selection
+            closeModal();
           });
 
-          // Append the player card to the modal's player list
           playerList.appendChild(playerCard);
         });
       })
@@ -226,7 +212,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
       });
   }
 
-  // Function to update the stadium card with the selected player's data
   function updateStadiumCard(stadiumCard, player) {
     stadiumCard.innerHTML = `
       <div class="bg-[url('./assets/img/emptyCard.png')] bg-contain bg-no-repeat bg-center w-12 lg:w-24 lg:h-24 cursor-pointer">
@@ -246,18 +231,15 @@ document.addEventListener("DOMContentLoaded", (e) => {
     `;
   }
 
-  // Function to open the modal
   function openModal() {
     modal.classList.remove("hidden");
     modal.classList.add("z-50");
   }
 
-  // Function to close the modal
   function closeModal() {
     modal.classList.add("hidden");
   }
 
-  // Close modal functionality
   document.querySelector("#closeModal").addEventListener("click", () => {
     closeModal();
   });
@@ -266,20 +248,16 @@ document.addEventListener("DOMContentLoaded", (e) => {
 document.querySelector("#teamForm").addEventListener("submit", (e) => {
   e.preventDefault();
 
-  // Check if data has already been appended
   if (document.querySelector("#displayData").children.length > 0) {
     return;
   }
 
-  // Get input field elements
   const teamNameInput = document.querySelector("#teamName");
   const teamFormationInput = document.querySelector("#teamFormation");
 
-  // Get trimmed values
   const teamName = teamNameInput.value.trim();
   const teamFormation = teamFormationInput.value.trim();
 
-  // Check if inputs are not empty
   if (teamName !== "" && teamFormation !== "") {
     const nameTeamBloc = document.createElement("div");
     nameTeamBloc.className =
@@ -292,18 +270,15 @@ document.querySelector("#teamForm").addEventListener("submit", (e) => {
     document.querySelector("#displayData").append(nameTeamBloc);
     document.querySelector("#playerCardElem").classList.remove("hidden");
 
-    // Clear input fields
     teamNameInput.value = "";
     teamFormationInput.value = "";
   }
 });
 
 document.querySelector("#removeTeam").addEventListener("click", () => {
-  // Show confirmation alert
   const confirmRemoval = confirm("Are you sure you want to remove the team?");
 
   if (confirmRemoval) {
-    // Clear the team name and formation
     document.querySelector("#playerCardElem").classList.add("hidden");
     document.querySelector("#displayData").innerHTML = "";
     document.querySelectorAll("#playerCardElem div").forEach((card) => {
@@ -313,5 +288,29 @@ document.querySelector("#removeTeam").addEventListener("click", () => {
             alt="ST"
           />`;
     });
+  }
+});
+
+document.querySelector("form").addEventListener("submit", function (event) {
+  const nameInput = document.getElementById("name");
+  const emailInput = document.getElementById("email");
+
+  let isValid = true;
+  let errorMessage = "";
+
+  if (!nameInput.value.trim() || nameInput.value.trim().split(" ").length < 2) {
+    isValid = false;
+    errorMessage += "Please enter your full name with at least two words.\n";
+  }
+
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(emailInput.value.trim())) {
+    isValid = false;
+    errorMessage += "Please enter a valid email address.\n";
+  }
+
+  if (!isValid) {
+    event.preventDefault();
+    alert(errorMessage);
   }
 });
