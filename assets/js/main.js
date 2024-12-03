@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
   const playerList = document.querySelector("#playerList");
   let selectedStadiumCard = null;
 
-  document.querySelectorAll(".player-card").forEach((imgElement) => {
+  document.querySelectorAll(".player-card img").forEach((imgElement) => {
     imgElement.addEventListener("click", (e) => {
       selectedStadiumCard = e.target.parentElement;
       const playerPosition = e.target.alt;
@@ -168,9 +168,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
     fetch("./Data/players.json")
       .then((response) => {
-        if (!response.ok) {
-          throw new Error("Failed to load player data.");
-        }
         return response.json();
       })
       .then((players) => {
@@ -207,9 +204,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
           playerList.appendChild(playerCard);
         });
       })
-      .catch((error) => {
-        console.error("Error loading players: ", error);
-      });
   }
 
   function updateStadiumCard(stadiumCard, player) {
