@@ -62,13 +62,12 @@
     </header>
     <main class="container">
       <div class="flex flex-col gap-8">
-        <!-- Player Form -->
+        <!-- Team Form -->
         <div class="p-4 flex flex-col gap-6 items-center">
           <form
             id="teamForm"
             class="flex flex-wrap gap-4 items-center justify-center p-4 bg-gray-800 rounded-lg text-white"
           >
-            <!-- Team Name Input -->
             <input
               type="text"
               id="teamName"
@@ -76,8 +75,6 @@
               placeholder="Team Name"
               required
             />
-
-            <!-- Formation Select -->
             <select
               id="teamFormation"
               class="p-3 rounded-md bg-gray-700 text-white w-48"
@@ -88,8 +85,6 @@
               <option value="4-4-2">4-4-2</option>
               <option value="3-5-2">3-5-2</option>
             </select>
-
-            <!-- Add Button -->
             <button
               type="submit"
               id="submitForm"
@@ -101,27 +96,21 @@
               class="fa-solid fa-trash p-3 rounded-md bg-red-600 hover:bg-red-400 transition-all text-white hover:scale-110"
             ></button>
           </form>
+          <!-- display Data -->
+          <div id="displayData"></div>
         </div>
-        <div id="displayData"></div>
+        <!-- Modal -->
         <div
           id="modal"
           class="bg-black bg-opacity-50 fixed inset-0 w-screen lg:w-screen flex items-center justify-center hidden"
         >
           <div class="bg-gray-800 rounded-lg shadow-lg p-6 relative">
-            <!-- Close Button -->
             <button
               id="closeModal"
               class="absolute top-3 right-3 text-gray-400 hover:text-gray-600"
             >
               &times;
             </button>
-
-            <!-- Modal Header -->
-            <h2 class="text-xl font-semibold text-gray-300 mb-4">
-              Player Setting
-            </h2>
-
-            <!-- Modal Content -->
             <div
               id="playerList"
               class="flex flex-row justify-between items-center"
@@ -129,6 +118,7 @@
           </div>
         </div>
       </div>
+      <!-- Team Section -->
       <div
         class="bg-[url('/assets/img/1137.jpg')] bg-contain bg-no-repeat bg-center h-screen w-screen lg:h-[130vh] mx-auto lg:max-w-2xl md:h-screen md:screen object-contain object-center"
       >
@@ -164,7 +154,6 @@
               alt="RW"
             />
           </div>
-
           <!-- MID -->
           <div
             class="player-card CDM m-auto col-start-6 col-span-2 row-start-7 md:col-start-6 md:col-span-2 md:row-start-7 lg:col-start-6 lg:row-start-7"
@@ -242,8 +231,68 @@
           </div>
         </div>
       </div>
-      <!-- Team Section -->
     </main>
+    <footer class="text-white w-auto mt-5 p-2 h-auto">
+      <div class="flex flex-col md:flex-row justify-around items-center">
+        <div class="text-lg font-bold tracking-wide">MEDLAQ777</div>
+        <nav class="mt-4 md:mt-0">
+          <ul class="flex gap-6">
+            <li class="hover:scale-110">
+              <a
+                href="index.html"
+                class="hover:text-yellow-400 transition-colors"
+              >
+                Home
+              </a>
+            </li>
+            <li class="hover:scale-110">
+              <a
+                href="players.html"
+                class="hover:text-yellow-400 transition-colors"
+              >
+                Players
+              </a>
+            </li>
+            <li class="hover:scale-110">
+              <a
+                href="contact.html"
+                class="hover:text-yellow-400 transition-colors"
+              >
+                contact
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="flex gap-4 mt-4 md:mt-0">
+          <a
+            href="#"
+            class="hover:text-yellow-400 transition-colors"
+            aria-label="Twitter"
+          >
+            <i class="fab fa-twitter hover:scale-110"></i>
+          </a>
+          <a
+            href="#"
+            class="hover:text-yellow-400 transition-colors"
+            aria-label="Facebook"
+          >
+            <i class="fab fa-facebook hover:scale-110"></i>
+          </a>
+          <a
+            href="#"
+            class="hover:text-yellow-400 transition-colors"
+            aria-label="Instagram"
+          >
+            <i class="fab fa-instagram hover:scale-110"></i>
+          </a>
+        </div>
+      </div>
+      <div
+        class="text-center text-gray-400 text-sm mt-4 lg:left-4 md:left-4 relative"
+      >
+        © 2024 MEDLAQ777 FUT CHAMPIONS
+      </div>
+    </footer>
   </body>
   <script src="./assets/js/main.js"></script>
 </html>
